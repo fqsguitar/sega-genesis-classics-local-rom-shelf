@@ -50,7 +50,7 @@ Steam libraries may be installed on a different drive. Use Steam's **Manage → 
 3. Record the game version and optionally a SHA-256 hash of the original DLL.
 4. Keep Steam's file verification available as a final recovery method.
 
-See [Installation](docs/INSTALLATION.md), [Technical notes](docs/TECHNICAL.md), [Troubleshooting](docs/TROUBLESHOOTING.md), and the [patcher](patcher/README.md).
+See [Installation](docs/INSTALLATION.md), [Technical notes](docs/TECHNICAL.md), [Troubleshooting](docs/TROUBLESHOOTING.md), the [patcher](patcher/README.md), and the [PscdPack guide](EXTRAS/README.md).
 
 ## Repository policy
 
