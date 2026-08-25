@@ -47,6 +47,14 @@ Artwork and metadata come from the existing internal catalog. The shelf modifica
 
 Steam verification, repair, or a game update can replace `Assembly-CSharp.dll`. Compare hashes and inspect the method again. Reapply an edit only after making a fresh backup of the newly installed official DLL and confirming the build is compatible.
 
+## The patcher says `Unsupported or already modified DLL`
+
+This is an intentional safety stop. The current patcher supports only SHA-256 `2EBAEF80F9FCF1C0565B6E6120D6478804D72574A15E82931C5AE07D599D9A2B`. Restore or verify the official game files and compare the hash again. Do not disable the check or use another person's DLL.
+
+## The patcher cannot download Mono.Cecil
+
+Confirm that PowerShell can reach `api.nuget.org` over HTTPS and that a proxy or security product is not intercepting the request. Mono.Cecil is intentionally obtained from the official NuGet service rather than committed as a binary. No game content is uploaded.
+
 ## The shelf count is 57, 58, or something else
 
 The research first observed 57 supported slots/entries, while a later extraction counted 58 primary `mShowOnShelf = true` records plus hidden regional variants. Counts can reflect build differences or counting conventions. Report the game version, DLL hash, how records were counted, and whether hidden/alternate records were included.

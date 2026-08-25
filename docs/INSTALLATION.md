@@ -34,7 +34,25 @@ Get-FileHash -Algorithm SHA256 "C:\path\to\Assembly-CSharp.dll"
 
 Keep the original filename in the backup. Do not commit the backup to this repository or share it.
 
-## 3. Apply the documented edit manually
+## 3. Choose an installation method
+
+### Experimental patcher (supported hash only)
+
+The patcher accepts only the original DLL whose SHA-256 is:
+
+```text
+2EBAEF80F9FCF1C0565B6E6120D6478804D72574A15E82931C5AE07D599D9A2B
+```
+
+From the repository root, with the game closed:
+
+```powershell
+.\patcher\patch.ps1 -GameDirectory "G:\SteamLibrary\steamapps\common\Sega Classics"
+```
+
+Change the path to your installation. Review [the patcher documentation](../patcher/README.md) before running it. The script downloads the open-source Mono.Cecil dependency from NuGet, compiles the included source locally, validates the input hash, and creates a verified backup before writing.
+
+### Manual method
 
 1. Open your own `Assembly-CSharp.dll` in dnSpyEx.
 2. Navigate to `GameLoader` → `PopulateGames()`.
@@ -63,6 +81,14 @@ This project currently does not document or provide a ROM-to-PAK converter. Do n
 If the game fails or the shelf is wrong, close it and restore immediately.
 
 ## Restoration
+
+If the experimental patcher created the backup, run:
+
+```powershell
+.\patcher\restore.ps1 -GameDirectory "G:\SteamLibrary\steamapps\common\Sega Classics"
+```
+
+Otherwise restore your manual external backup as described below.
 
 With the game closed, copy your backed-up original DLL back to:
 
