@@ -20,6 +20,7 @@ patched/
 dist/
 artifacts/
 patcher/.tools/
+EXTRAS/*.exe
 *.bak
 *.orig
 *.rej
