@@ -1,4 +1,4 @@
-# Experimental patcher
+# Patcher
 
 This patcher is limited to the one original `Assembly-CSharp.dll` build whose SHA-256 is:
 
@@ -7,6 +7,8 @@ This patcher is limited to the one original `Assembly-CSharp.dll` build whose SH
 ```
 
 It refuses unknown or already modified DLLs, creates a backup before writing, and restores the backup automatically if patching fails. Mono.Cecil 0.11.6 is downloaded from NuGet at build time and is not committed to this repository.
+
+The supported build was tested successfully against a live installation: the patch completed with the same deterministic SHA-256 produced during isolated testing, the Game Room loaded, local shelf entries appeared, and a local game launched normally. Restoration was verified on an isolated copy; keep the generated backup until you have independently confirmed restoration on your system.
 
 Run from PowerShell with the game closed:
 

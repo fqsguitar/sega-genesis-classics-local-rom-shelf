@@ -9,7 +9,7 @@ The Game Room contains an internal catalog of games and the presentation data ne
 
 ## Project status
 
-The repository includes an **experimental source-based patcher** for one verified Windows build. It validates the original DLL by SHA-256, creates a backup, performs a method-level edit, and refuses unknown or already modified builds. See [Experimental patcher](patcher/README.md). Builds can differ, so never replace DLLs with binaries downloaded from another person.
+The repository includes a **source-based patcher** for one verified Windows build. It validates the original DLL by SHA-256, creates a backup, performs a method-level edit, and refuses unknown or already modified builds. The patcher has been tested both on an isolated copy and against the corresponding live game installation. See [Patcher](patcher/README.md). Builds can differ, so never replace DLLs with binaries downloaded from another person.
 
 ## What the modification changes
 
@@ -50,7 +50,7 @@ Steam libraries may be installed on a different drive. Use Steam's **Manage → 
 3. Record the game version and optionally a SHA-256 hash of the original DLL.
 4. Keep Steam's file verification available as a final recovery method.
 
-See [Installation](docs/INSTALLATION.md), [Technical notes](docs/TECHNICAL.md), [Troubleshooting](docs/TROUBLESHOOTING.md), and the [experimental patcher](patcher/README.md).
+See [Installation](docs/INSTALLATION.md), [Technical notes](docs/TECHNICAL.md), [Troubleshooting](docs/TROUBLESHOOTING.md), and the [patcher](patcher/README.md).
 
 ## Repository policy
 

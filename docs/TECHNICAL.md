@@ -99,4 +99,6 @@ This change affects shelf eligibility only. It does not:
 
 The experimental patcher contains only original source and obtains Mono.Cecil from its official NuGet package at runtime. It accepts only the known original SHA-256, backs up the source DLL, locates the expected types, fields, calls, and ownership block structurally, writes to a temporary file, reopens the output, and verifies that the patched method calls `System.IO.File.Exists`. Unknown builds fail closed rather than receiving a fuzzy binary rewrite.
 
-The patcher was tested on an isolated copy of the supported original DLL. The patch operation produced a readable assembly containing the expected local-file test; the restore operation reproduced the original SHA-256 exactly. Testing against the actual installed game remains a separate manual acceptance step.
+The patcher was first tested on an isolated copy of the supported original DLL. The patch operation produced a readable assembly containing the expected local-file test; the restore operation reproduced the original SHA-256 exactly.
+
+It was then tested against the matching live installation. The patched output had SHA-256 `2128298430E000B8BFA8F6F9B2C801B8952C402EFE7B1E705DEA7B9106FE476F`, matching the isolated test output. The Game Room loaded, local shelf entries appeared, and a local game launched normally. Live restoration was not part of that acceptance test.
