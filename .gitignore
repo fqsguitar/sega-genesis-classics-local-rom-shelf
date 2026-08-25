@@ -1,0 +1,40 @@
+# Proprietary or user-supplied game content
+*.bin
+*.gen
+*.smd
+*.32x
+*.pak
+*.rom
+*.sav
+*.srm
+*.state
+
+# Never publish original or modified game assemblies
+*.dll
+*.dll.bak
+*.original.dll
+
+# Patch/build output and local backups
+backups/
+patched/
+dist/
+artifacts/
+*.bak
+*.orig
+*.rej
+
+# Editors and operating systems
+.vs/
+.vscode/
+.idea/
+*.user
+*.suo
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Logs and temporary files
+*.log
+*.tmp
+*.temp
+~$*
